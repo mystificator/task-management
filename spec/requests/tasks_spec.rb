@@ -1,4 +1,3 @@
-# spec/requests/tasks_spec.rb
 require 'rails_helper'
 
 RSpec.describe "Tasks", type: :request do
