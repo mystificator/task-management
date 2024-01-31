@@ -15,31 +15,35 @@ class TasksController < ApplicationController
         @tasks = Task.all
         render json: @tasks, status: :ok
     end
-
-
+    
+    
     def show
         render json: @task, status: :ok
     end
-
-
+    
+    
     def update
         if @task.update(task_params)
             render json: @task, status: :ok
         else
-            render :edit, status: :unprocessable_entity
+            render json: { errors: @task.errors.full_messages }, status: :unprocessable_entity
         end
     end
-
-
+    
+    
     def destroy
         @task.destroy
+        head :no_content
     end
 
     private
         def find_task
             @task = Task.find_by(id: params[:id])
-            rescue ActiveRecord::RecordNotFound
-            render json: { errors: 'Task not found' }, status: :not_found
+            if @task
+                return @task
+            else
+                render json: { errors: 'Task not found' }, status: :not_found
+            end
         end
 
         def task_params
