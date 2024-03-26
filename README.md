@@ -1,24 +1,13 @@
-# README
+2. Database Integration:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project:- A basic task management system with database integration.
 
-Things you may want to cover:
+Contents:
 
-* Ruby version
+• Endpoints: POST /tasks (create a task), GET /tasks/:id (get task details), GET /tasks (get all tasks), PUT /tasks/:id (update task), DELETE /tasks/:id (delete task).
 
-* System dependencies
+• Controllers & Models: Task model for CRUD operations, controllers for handling task creation, retrieval, update, and deletion.
 
-* Configuration
+•  Database Connectivity: Integrate SQLite or another database of choice for storing task-related data.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+• Unit Tests: Write unit tests for the whole project
